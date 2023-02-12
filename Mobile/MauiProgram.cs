@@ -1,4 +1,6 @@
 ﻿using Microsoft.Extensions.Logging;
+using Mobile.Services;
+using Mobile.ViewModels;
 
 namespace Mobile
 {
@@ -18,6 +20,17 @@ namespace Mobile
 #if DEBUG
 		builder.Logging.AddDebug();
 #endif
+
+            //Services
+            builder.Services.AddSingleton<IEmployeeService, EmployeeService>();
+
+            //Views
+            builder.Services.AddSingleton<EmployeesList>();
+            builder.Services.AddSingleton<AddEmployee>();
+
+            //ViewModels
+            builder.Services.AddSingleton<EmployeesViewModel>();
+            builder.Services.AddSingleton<AddEmployeeViewModel>();
 
             return builder.Build();
         }
