@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MobileClient.Views.AddUpdateStudentDetail"
+             Title="Add / Update Student Detail">
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style TargetType="Label">
+                <Setter Property="FontSize" Value="14"></Setter>
+                <Setter Property="TextColor" Value="SlateGray"></Setter>
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <StackLayout Margin="10" Spacing="15">
+
+        <VerticalStackLayout>
+            <Label Text="First Name"/>
+            <Entry Text="{Binding StudentDetail.FirstName}" Placeholder="First Name"/>
+        </VerticalStackLayout>
+        
+        <VerticalStackLayout>
+            <Label Text="Last Name"/>
+            <Entry Text="{Binding StudentDetail.LastName}" Placeholder="Last Name"/>
+        </VerticalStackLayout>
+
+        <VerticalStackLayout>
+            <Label Text="Email"/>
+            <Entry Text="{Binding StudentDetail.Email}" Placeholder="Email"/>
+        </VerticalStackLayout>
+
+        <Button Text="Save" Command="{Binding AddUpdateStudentCommand}"/>
+    </StackLayout>
+</ContentPage>
